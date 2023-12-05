@@ -42,10 +42,3 @@ object Day3 extends Day(3):
         !(c.isDigit || c == '.'))
 
       parseNumber(row, col + 1, grid, s"$parsed${grid(row)(col)}", symbols union neighbors.map((row, col) => (grid(row)(col), (row, col))).toSet)
-
-
-            
-
-
-
-
