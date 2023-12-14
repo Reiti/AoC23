@@ -59,7 +59,7 @@ object Day10 extends Day(10):
   def expand(map: Map[(Int, Int), Char]): List[String] =
     (0 to map.keys.maxBy(_._1)._1).flatMap(x => {
       (0 to map.keys.maxBy(_._2)._2).map(y => {
-        map(x, y) match
+        map((x, y)) match
           case 'L' => List(
             ".|.",
             ".L-",
@@ -100,7 +100,7 @@ object Day10 extends Day(10):
             "-S-",
             ".|."
           )
-      }).reduce((l, r) => l.zip(r).map((a, b) => a + b)).toList
+      }).reduce[List[String]]((l,r) => l.zip(r).map((a, b) => a + b))
     }).toList
 
   @tailrec
